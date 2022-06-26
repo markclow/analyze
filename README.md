@@ -11,6 +11,8 @@ Command line utility to analyze go source files using go/ast.
 ### isImported
 Was a package imported in the go file?
 
+Useful to check if the go file imports the correct packages.
+
     analyze isImported --fileName ~/_projects/_work/analyze/testdata/functions_1.go --package fmt
 
 ### getFunctionParameters
