@@ -1,22 +1,38 @@
-# analyze
-Command line utility to analyze go source files.
+#Analyze
+Command line utility to analyze go source files using go/ast.
 
-## installation:
-go get github.com/markclow/analyze
+## Installation:
+    go get github.com/markclow/analyze
 
-## examples:
+## Help
+    analyze --help
+    
+## Available Commands:
 ### isImported
-Was a package imported?
-analyze isImported --fileName /Users/marcusclow/_projects/_work/analyze/testdata/functions_1.go --package fmt
+Was a package imported in the go file?
+
+    analyze isImported --fileName ~/_projects/_work/analyze/testdata/functions_1.go --package fmt
 
 ### getFunctionParameters
-analyze getFunctionParameters --fileName /Users/marcusclow/_projects/_work/analyze/testdata/functions_4.go --functionName computeMarsYears
-Get the parameters (arguments) to a function as a comma-separated list.
+Get a comma-separated list of the parameters passed to the function in the go file.
+
+Useful to check if the function was written as expected (ie expects the correct parameters).
+
+    analyze getFunctionParameters --fileName ~/_projects/_work/analyze/testdata/functions_4.go --functionName computeMarsYears
+
 
 ### getFunctionResults
-analyze getFunctionResults --fileName /Users/marcusclow/_projects/_work/analyze/testdata/functions_4.go --functionName computeMarsYears
-Get the results (returned) from a function as a comma-separated list.
+Get a comma-separated list of the results returned by the function in the go file.
+
+Useful to check if the function was written as expected (ie returns the correct results).
+
+    analyze getFunctionResults --fileName ~/_projects/_work/analyze/testdata/functions_4.go --functionName computeMarsYears
+
 
 ### getFunctionInvokedBy
-analyze getFunctionInvokedBy --fileName /Users/marcusclow/_projects/_work/analyze/testdata/functions_1.go --functionName eatTacos
-Get a comma-separated list of the functions that invoke the function.
+Get a comma-separated list of the functions that invoke the function in the go file.
+
+Useful to check if the function is called anywhere.
+
+    analyze getFunctionInvokedBy --fileName ~/_projects/_work/analyze/testdata/functions_1.go --functionName eatTacos
+
